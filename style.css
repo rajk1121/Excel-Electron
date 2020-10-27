@@ -1,0 +1,103 @@
+html,body{
+    margin: 0px;
+    padding: 0px;
+}
+/* ?? */
+/* universal selector */
+*{
+    box-sizing: border-box;
+}
+.menu-container{
+    height: 20px;
+    border: 1px solid red;
+    /* display: flex; */
+    justify-content: space-evenly;
+    
+    width: 100%;
+}
+.menu-option-container{
+    height: 60px;
+    border: 1px solid green;
+    justify-content: space-evenly;
+   width: 363px;
+    align-items: center;
+    display: block;
+}
+
+.menu-options.selected{
+   
+    display: flex;
+    justify-content: inherit;
+    align-items: center;
+    height: 100%;
+
+}
+
+
+input[type="button"].isOn{
+    background-color: lightslategrey;
+}
+
+
+.formula-container{
+    height: 28px;
+    border: 1px solid royalblue;
+}
+/* 
+.sheets-container{
+    height: 20px;
+    border: 1px solid grey;
+} */
+.rows{
+    display: flex;
+}
+.cell{
+    width: 43px;
+    min-height: 26px;
+    border: 1px solid;
+    text-align: center;
+}
+.content-container{
+    height: calc(100vh - 128px);
+    background-color: lightgreen;
+    overflow: auto;
+position: relative;
+
+}
+.cell-container{
+    position: relative;
+}
+.top-left-cell{
+    height: 26px;
+    width: 42px;
+    background-color: gray;
+    z-index:3;
+    position: absolute;
+}
+.top-row{
+    display: flex;
+    position: absolute;
+    left: 42px;
+    z-index:2;
+    background-color: limegreen;
+}
+/* .top-row>.cell{
+min-width: 74px;
+} */
+.left-col{
+position: absolute;
+z-index:2;
+background-color: limegreen;
+top:25px;
+}
+/* .left-col>.cell{
+    width: 25px
+} */
+.grid{
+    position: absolute;
+    top: 26px;
+    left: 43px;
+}
+/* .row>.cell{
+    width: 74px;
+} */

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title%></title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="./index.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="menu-container">
+        <%=Heading%>
+    </div>
+    <div class="menu-options">
+        Menu Options
+    </div>
+    <div class="formulaBar">Formula Bar<input type="text" class="address-container"><input type="text" class="formula-container"></div>
+    <div class="cell-container">
+        <div class="top-left-cell">
+
+        </div>
+        <div class="top-row">
+            
+            <% for(let i=0 ; i<cols ; i++){ %>
+                <div class="cell">
+                    <%= String.fromCharCode(i+65) %>
+                </div>
+            <%}%>
+        </div>
+        <div class="left-col">
+            <% for(let i=0 ; i<rows ; i++){ %>
+                <div class="cell">
+                    <%= i%>
+                </div>
+            <%}%>
+        </div>
+        <div class="grid">
+            <% for(let i=0 ; i<rows ; i++){ %>
+                <div class="rows">
+                    <% for(let j=0 ; j<cols ; j++){ %>
+                        <input type="text" class="cell" row=<%=i%> col=<%=j%>>
+                        </input>
+                    <%}%>
+                </div>
+            <%}%>
+        </div>
+    </div>
+    <div class="sheets">
+        Sheets
+    </div>
+</body>
+</html>
