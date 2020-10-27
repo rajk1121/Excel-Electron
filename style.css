@@ -39,7 +39,7 @@ input[type="button"].isOn{
 }
 
 
-.formula-container{
+.formula-container, .address-container{
     height: 28px;
     border: 1px solid royalblue;
 }

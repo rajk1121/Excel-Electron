@@ -11,4 +11,19 @@ $(document).ready(function(){
         $('.address-container').val(colAddr+rowAddr)
         console.log(colAddr+rowAddr)
     })
+    function start(){
+        let data = []
+        $('.grid').find('.rows').each(function(){
+            let row = []
+            $(this).find('.cell').each(function(){
+                let cell = ''
+                console.log('hi')
+                $(this).html('')
+                row.push(cell)
+            })
+            data.push(row)
+        })
+        console.log(data)
+    }
+    start();
 })
