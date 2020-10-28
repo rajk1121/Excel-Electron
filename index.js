@@ -12,6 +12,7 @@ $(document).ready(function(){
         let colAddr = String.fromCharCode(65 + cid);
         let rowAddr = rid + 1;
         $('.address-container').val(colAddr+rowAddr)
+        $('.formula-container').val(data[rid][cid].formula)
         console.log(colAddr+rowAddr)
     })
     $('.rows .cell').on('click', function(){
@@ -45,6 +46,13 @@ $(document).ready(function(){
         console.log(cellObject)
         console.log($(`.rows .cell[row=${rid}][col=${cid}]`))
         $(`.rows .cell[row=${rid}][col=${cid}]`).val(nVal)
+        for(let i=0 ; i<cellObject.downstream.length ; i++){
+            let dsoIndices = cellObject.downstream[i]
+            let dsobj = data[dsoIndices.rid][dsoIndices.cid]
+            console.log(dsoIndices, dsobj)
+            let nv = evaluate(dsobj)
+            updateCell(dsoIndices.rid, dsoIndices.cid, nv)
+        }
     }
     function evaluate(cellObject){
         let formula = cellObject.formula
