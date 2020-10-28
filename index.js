@@ -31,11 +31,34 @@ $(document).ready(function(){
         if(cellObject.formula){
             deleteFormula(cellObject, lcc)
         }
+        console.log('blur')
         cellObject.formula = $(this).val()
         setFormula(lcc, cellObject.formula)
-        // updateCell(cellIndices.rid, cellIndices.cid, )
+        let nVal = evaluate(cellObject)
+        updateCell(cellIndices.rid, cellIndices.cid, nVal)
         
     })
+    function updateCell(rid, cid, nVal){
+        console.log(rid, cid, nVal)
+        let cellObject = data[rid][cid]
+        cellObject.value = nVal 
+        console.log(cellObject)
+        console.log($(`.rows .cell[row=${rid}][col=${cid}]`))
+        $(`.rows .cell[row=${rid}][col=${cid}]`).val(nVal)
+    }
+    function evaluate(cellObject){
+        let formula = cellObject.formula
+        for(let i=0 ; i<cellObject.upstream.length ; i++){
+            let uso = cellObject.upstream[i]
+            console.log(uso)
+            let usCellAddress = String.fromCharCode(uso.cid + 65) + (uso.rid+1)
+            let usObject = data[uso.rid][uso.cid]
+            formula = formula.replace(" "+usCellAddress+" " , usObject.value)
+            console.log(formula, usCellAddress)
+
+        }
+        return eval(formula)
+    }
     function deleteFormula(cellObject, lcc){
         cellObject.formula = '';
         let{rid , cid} = getIndices(lcc)
