@@ -66,7 +66,10 @@ position: relative;
 
 }
 .cell-container{
-    position: relative;
+    height: calc(100vh - 128px);
+    background-color: lightgreen;
+    overflow: auto;
+position: relative; 
 }
 .top-left-cell{
     height: 26px;

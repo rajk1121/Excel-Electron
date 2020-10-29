@@ -24,9 +24,14 @@ let options = {
 }
 
 //Synchronous
-
 $(document).ready(function(){
     let lcc;
+    $('.cell-container').on('scroll', function(){
+        console.log('ddsdsdsd', scrollY)
+        $('.top-row,.top-left-cell').css('top', $(this).scrollTop())
+        
+        $('.left-col,.top-left-cell').css('left', $(this).scrollLeft())
+    })
     
     var data = []
     $('.new').on('click', function(){
