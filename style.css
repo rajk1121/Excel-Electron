@@ -24,12 +24,13 @@ html,body{
     display: block;
 }
 
-.menu-options.selected{
+.menu-options{
    
     display: flex;
-    justify-content: inherit;
+    justify-content: space-around;
     align-items: center;
-    height: 100%;
+    height: 40px;
+    width: 150px;
 
 }
 
