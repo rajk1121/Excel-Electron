@@ -21,8 +21,8 @@ function createWindow() {
     // console.log("Window opened successfully");
     win.removeMenu()
     win.maximize();
-    win.webContents.openDevTools()
-    win.webContents.openDevTools();
+    // win.webContents.openDevTools()
+    // win.webContents.openDevTools();
   })
 }
 
